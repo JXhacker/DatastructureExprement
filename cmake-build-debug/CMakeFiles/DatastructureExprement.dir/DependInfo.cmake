@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "D:/Clion/Projects/DatastructureExprement/main.cpp" "D:/Clion/Projects/DatastructureExprement/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/main.cpp.obj"
+  "D:/Clion/Projects/DatastructureExprement/s.cpp" "D:/Clion/Projects/DatastructureExprement/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/s.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

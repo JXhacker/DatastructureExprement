@@ -149,6 +149,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+s.obj: s.cpp.obj
+
+.PHONY : s.obj
+
+# target to build an object file
+s.cpp.obj:
+	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/s.cpp.obj
+.PHONY : s.cpp.obj
+
+s.i: s.cpp.i
+
+.PHONY : s.i
+
+# target to preprocess a source file
+s.cpp.i:
+	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/s.cpp.i
+.PHONY : s.cpp.i
+
+s.s: s.cpp.s
+
+.PHONY : s.s
+
+# target to generate assembly for a file
+s.cpp.s:
+	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/s.cpp.s
+.PHONY : s.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -161,6 +188,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... s.obj
+	@echo ... s.i
+	@echo ... s.s
 .PHONY : help
 
 

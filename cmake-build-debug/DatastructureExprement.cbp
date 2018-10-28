@@ -85,6 +85,12 @@
 		<Unit filename="D:/Clion/Projects/DatastructureExprement/main.cpp">
 			<Option target="DatastructureExprement"/>
 		</Unit>
+		<Unit filename="D:/Clion/Projects/DatastructureExprement/s.cpp">
+			<Option target="DatastructureExprement"/>
+		</Unit>
+		<Unit filename="D:/Clion/Projects/DatastructureExprement/s.h">
+			<Option target="DatastructureExprement"/>
+		</Unit>
 		<Unit filename="D:/Clion/Projects/DatastructureExprement/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
