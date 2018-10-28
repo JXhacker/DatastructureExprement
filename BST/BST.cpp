@@ -42,8 +42,8 @@ void visit(BSTNode bsn) {
 
 void PreOrder(BSTree bst) {
     if (bst != nullptr) {
-        PreOrder(bst->lchild);
         visit(*bst);
+        PreOrder(bst->lchild);
         PreOrder(bst->rchild);
     }
 }
@@ -64,7 +64,7 @@ BSTree SearchBST(BSTree bst, keyType key) {
     }
 }
 
-int main(int argc, char *argv[]) {
+int main1(int argc, char *argv[]) {
     BSTree bsTree = nullptr;
     keyType keys[11] = {63, 90, 70, 55, 67, 42, 98, 83, 10, 45, 58};
     for (int key : keys) {

@@ -114,16 +114,41 @@ bool insert_AVLTree(AVLTree *avlt, keyType key) {
                 A->bf = -1;
                 B->bf = 0;
                 C->bf = 0;
-            } else if (key>C->key){
+            } else if (key > C->key) {
                 A->bf = 0;
                 B->bf = 1;
                 C->bf = 0;
-            } else{
-                A->bf=0;
-                B->bf=0;
+            } else {
+                A->bf = 0;
+                B->bf = 0;
             }
             if (fa == nullptr) {
-                *avlt = B;
+                *avlt = C;
+            } else if (A == fa->lchild) {
+                fa->lchild = C;
+            } else {
+                fa->rchild = C;
+            }
+        } else if (A->bf == -2 && B->bf == 1) {
+            C = B->lchild;
+            B->lchild = C->rchild;
+            A->rchild = C->lchild;
+            C->lchild = A;
+            C->rchild = B;
+            if (key < C->key) {
+                A->bf = 0;
+                B->bf = -1;
+                C->bf = 0;
+            } else if (key > C->key) {
+                A->bf = 1;
+                B->bf = 0;
+                C->bf = 0;
+            } else {
+                A->bf = 0;
+                B->bf = 0;
+            }
+            if (fa == nullptr) {
+                *avlt = C;
             } else if (A == fa->lchild) {
                 fa->lchild = C;
             } else {
@@ -131,4 +156,25 @@ bool insert_AVLTree(AVLTree *avlt, keyType key) {
             }
         }
     }
+}
+
+void visit(AVLTree avlTree) {
+    printf("%d ", avlTree->key);
+}
+
+void AVL_PreOrder(AVLTree avlTree) {
+    if (avlTree != nullptr) {
+        AVL_PreOrder(avlTree->lchild);
+        visit(avlTree);
+        AVL_PreOrder(avlTree->rchild);
+    }
+}
+
+int main() {
+    AVLTree avlTree = nullptr;
+    int data[4] = {1, 2, 3, 4};
+    for (int i = 0; i < 4; i++) {
+        insert_AVLTree(&avlTree, data[i]);
+    }
+    AVL_PreOrder(avlTree);
 }
