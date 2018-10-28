@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/Clion/Projects/DatastructureExprement/AVL/AVL.cpp">
+			<Option target="DatastructureExprement"/>
+		</Unit>
 		<Unit filename="D:/Clion/Projects/DatastructureExprement/BST/BST.cpp">
 			<Option target="DatastructureExprement"/>
 		</Unit>

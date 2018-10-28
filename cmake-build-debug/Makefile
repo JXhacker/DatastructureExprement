@@ -122,6 +122,33 @@ DatastructureExprement/fast:
 	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/build
 .PHONY : DatastructureExprement/fast
 
+AVL/AVL.obj: AVL/AVL.cpp.obj
+
+.PHONY : AVL/AVL.obj
+
+# target to build an object file
+AVL/AVL.cpp.obj:
+	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/AVL/AVL.cpp.obj
+.PHONY : AVL/AVL.cpp.obj
+
+AVL/AVL.i: AVL/AVL.cpp.i
+
+.PHONY : AVL/AVL.i
+
+# target to preprocess a source file
+AVL/AVL.cpp.i:
+	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/AVL/AVL.cpp.i
+.PHONY : AVL/AVL.cpp.i
+
+AVL/AVL.s: AVL/AVL.cpp.s
+
+.PHONY : AVL/AVL.s
+
+# target to generate assembly for a file
+AVL/AVL.cpp.s:
+	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/AVL/AVL.cpp.s
+.PHONY : AVL/AVL.cpp.s
+
 BST/BST.obj: BST/BST.cpp.obj
 
 .PHONY : BST/BST.obj
@@ -185,6 +212,9 @@ help:
 	@echo ... edit_cache
 	@echo ... DatastructureExprement
 	@echo ... rebuild_cache
+	@echo ... AVL/AVL.obj
+	@echo ... AVL/AVL.i
+	@echo ... AVL/AVL.s
 	@echo ... BST/BST.obj
 	@echo ... BST/BST.i
 	@echo ... BST/BST.s
