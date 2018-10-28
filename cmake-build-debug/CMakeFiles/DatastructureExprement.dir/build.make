@@ -80,40 +80,40 @@ CMakeFiles/DatastructureExprement.dir/main.cpp.obj.provides: CMakeFiles/Datastru
 CMakeFiles/DatastructureExprement.dir/main.cpp.obj.provides.build: CMakeFiles/DatastructureExprement.dir/main.cpp.obj
 
 
-CMakeFiles/DatastructureExprement.dir/s.cpp.obj: CMakeFiles/DatastructureExprement.dir/flags.make
-CMakeFiles/DatastructureExprement.dir/s.cpp.obj: ../s.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Clion\Projects\DatastructureExprement\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/DatastructureExprement.dir/s.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\DatastructureExprement.dir\s.cpp.obj -c D:\Clion\Projects\DatastructureExprement\s.cpp
+CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.obj: CMakeFiles/DatastructureExprement.dir/flags.make
+CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.obj: ../BST/BST.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Clion\Projects\DatastructureExprement\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\DatastructureExprement.dir\BST\BST.cpp.obj -c D:\Clion\Projects\DatastructureExprement\BST\BST.cpp
 
-CMakeFiles/DatastructureExprement.dir/s.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DatastructureExprement.dir/s.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Clion\Projects\DatastructureExprement\s.cpp > CMakeFiles\DatastructureExprement.dir\s.cpp.i
+CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Clion\Projects\DatastructureExprement\BST\BST.cpp > CMakeFiles\DatastructureExprement.dir\BST\BST.cpp.i
 
-CMakeFiles/DatastructureExprement.dir/s.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DatastructureExprement.dir/s.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Clion\Projects\DatastructureExprement\s.cpp -o CMakeFiles\DatastructureExprement.dir\s.cpp.s
+CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Clion\Projects\DatastructureExprement\BST\BST.cpp -o CMakeFiles\DatastructureExprement.dir\BST\BST.cpp.s
 
-CMakeFiles/DatastructureExprement.dir/s.cpp.obj.requires:
+CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.obj.requires:
 
-.PHONY : CMakeFiles/DatastructureExprement.dir/s.cpp.obj.requires
+.PHONY : CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.obj.requires
 
-CMakeFiles/DatastructureExprement.dir/s.cpp.obj.provides: CMakeFiles/DatastructureExprement.dir/s.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/s.cpp.obj.provides.build
-.PHONY : CMakeFiles/DatastructureExprement.dir/s.cpp.obj.provides
+CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.obj.provides: CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.obj.provides.build
+.PHONY : CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.obj.provides
 
-CMakeFiles/DatastructureExprement.dir/s.cpp.obj.provides.build: CMakeFiles/DatastructureExprement.dir/s.cpp.obj
+CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.obj.provides.build: CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.obj
 
 
 # Object files for target DatastructureExprement
 DatastructureExprement_OBJECTS = \
 "CMakeFiles/DatastructureExprement.dir/main.cpp.obj" \
-"CMakeFiles/DatastructureExprement.dir/s.cpp.obj"
+"CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.obj"
 
 # External object files for target DatastructureExprement
 DatastructureExprement_EXTERNAL_OBJECTS =
 
 DatastructureExprement.exe: CMakeFiles/DatastructureExprement.dir/main.cpp.obj
-DatastructureExprement.exe: CMakeFiles/DatastructureExprement.dir/s.cpp.obj
+DatastructureExprement.exe: CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.obj
 DatastructureExprement.exe: CMakeFiles/DatastructureExprement.dir/build.make
 DatastructureExprement.exe: CMakeFiles/DatastructureExprement.dir/linklibs.rsp
 DatastructureExprement.exe: CMakeFiles/DatastructureExprement.dir/objects1.rsp
@@ -127,7 +127,7 @@ CMakeFiles/DatastructureExprement.dir/build: DatastructureExprement.exe
 .PHONY : CMakeFiles/DatastructureExprement.dir/build
 
 CMakeFiles/DatastructureExprement.dir/requires: CMakeFiles/DatastructureExprement.dir/main.cpp.obj.requires
-CMakeFiles/DatastructureExprement.dir/requires: CMakeFiles/DatastructureExprement.dir/s.cpp.obj.requires
+CMakeFiles/DatastructureExprement.dir/requires: CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.obj.requires
 
 .PHONY : CMakeFiles/DatastructureExprement.dir/requires
 

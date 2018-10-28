@@ -122,6 +122,33 @@ DatastructureExprement/fast:
 	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/build
 .PHONY : DatastructureExprement/fast
 
+BST/BST.obj: BST/BST.cpp.obj
+
+.PHONY : BST/BST.obj
+
+# target to build an object file
+BST/BST.cpp.obj:
+	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.obj
+.PHONY : BST/BST.cpp.obj
+
+BST/BST.i: BST/BST.cpp.i
+
+.PHONY : BST/BST.i
+
+# target to preprocess a source file
+BST/BST.cpp.i:
+	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.i
+.PHONY : BST/BST.cpp.i
+
+BST/BST.s: BST/BST.cpp.s
+
+.PHONY : BST/BST.s
+
+# target to generate assembly for a file
+BST/BST.cpp.s:
+	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.s
+.PHONY : BST/BST.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -149,33 +176,6 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-s.obj: s.cpp.obj
-
-.PHONY : s.obj
-
-# target to build an object file
-s.cpp.obj:
-	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/s.cpp.obj
-.PHONY : s.cpp.obj
-
-s.i: s.cpp.i
-
-.PHONY : s.i
-
-# target to preprocess a source file
-s.cpp.i:
-	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/s.cpp.i
-.PHONY : s.cpp.i
-
-s.s: s.cpp.s
-
-.PHONY : s.s
-
-# target to generate assembly for a file
-s.cpp.s:
-	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/s.cpp.s
-.PHONY : s.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -185,12 +185,12 @@ help:
 	@echo ... edit_cache
 	@echo ... DatastructureExprement
 	@echo ... rebuild_cache
+	@echo ... BST/BST.obj
+	@echo ... BST/BST.i
+	@echo ... BST/BST.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... s.obj
-	@echo ... s.i
-	@echo ... s.s
 .PHONY : help
 
 

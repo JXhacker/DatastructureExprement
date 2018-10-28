@@ -3,4 +3,4 @@ project(DatastructureExprement)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(DatastructureExprement main.cpp s.cpp s.h)
+add_executable(DatastructureExprement main.cpp BST/BST.cpp)
