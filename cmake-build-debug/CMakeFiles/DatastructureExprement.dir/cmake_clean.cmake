@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/DatastructureExprement.dir/main.cpp.obj"
   "CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.obj"
   "CMakeFiles/DatastructureExprement.dir/AVL/AVL.cpp.obj"
+  "CMakeFiles/DatastructureExprement.dir/Heap/Heap.cpp.obj"
   "DatastructureExprement.pdb"
   "DatastructureExprement.exe"
   "DatastructureExprement.exe.manifest"

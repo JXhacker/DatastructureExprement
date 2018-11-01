@@ -18,25 +18,27 @@ bool insert_AVLTree(AVLTree *avlt, keyType key) {
 /*
  * 过程：先插入节点--->更新平衡因子-->判断类型-->调整
 */
-
-    AVLNode *newNode;         //要插入的新节点
-    AVLNode *A;    //指向离插入点最近的平衡因子不为0的一个节点
-    AVLNode *fa;    //指向离插入点次最近的平衡因子不为0的点
-    AVLNode *fp;    //指向插入点的前一个节点
-    AVLNode *p;    //移动指针
-    AVLNode *B;    //指向A的下一个节点
-    AVLNode *C;    //B的右孩子
+    AVLNode *newNode;   //要插入的新节点
+    AVLNode *A;         //指向离插入点最近的平衡因子不为0的一个节点
+    AVLNode *fa;        //指向离插入点次最近的平衡因子不为0的点
+    AVLNode *fp;        //指向插入点的前一个节点
+    AVLNode *p;         //移动指针
+    AVLNode *B;         //指向A的下一个节点
+    AVLNode *C;         //B的右孩子
     newNode = (AVLNode *) malloc(sizeof(AVLNode));
+    newNode->key = key;
     newNode->lchild = nullptr;
     newNode->rchild = nullptr;
     newNode->bf = 0;
     if (*avlt == nullptr) {
         *avlt = newNode;
+        return true;
     } else {
         p = *avlt;
         A = *avlt;
         fa = nullptr;
         fp = nullptr;
+
         while (p != nullptr) {
             if (p->bf != 0) {
                 A = p;
@@ -45,14 +47,15 @@ bool insert_AVLTree(AVLTree *avlt, keyType key) {
             fp = p;
             if (key < p->key) {
                 p = p->lchild;
-            }
-            if (key > p->key) {
+            } else if (key > p->key) {
                 p = p->rchild;
-            }
-            if (key == p->key) {
+            } else {
                 return false;
             }
+
         }
+
+
         if (key > fp->key) {
             fp->rchild = newNode;
         }
@@ -155,6 +158,7 @@ bool insert_AVLTree(AVLTree *avlt, keyType key) {
                 fa->rchild = C;
             }
         }
+        return true;
     }
 }
 
@@ -162,19 +166,19 @@ void visit(AVLTree avlTree) {
     printf("%d ", avlTree->key);
 }
 
-void AVL_PreOrder(AVLTree avlTree) {
+void AVL_InOrder(AVLTree avlTree) {
     if (avlTree != nullptr) {
-        AVL_PreOrder(avlTree->lchild);
+        AVL_InOrder(avlTree->lchild);
         visit(avlTree);
-        AVL_PreOrder(avlTree->rchild);
+        AVL_InOrder(avlTree->rchild);
     }
 }
 
 int main() {
     AVLTree avlTree = nullptr;
-    int data[4] = {1, 2, 3, 4};
-    for (int i = 0; i < 4; i++) {
+    int data[5] = {1, 2, 3, 4, 5};
+    for (int i = 0; i < 5; i++) {
         insert_AVLTree(&avlTree, data[i]);
     }
-    AVL_PreOrder(avlTree);
+    AVL_InOrder(avlTree);
 }

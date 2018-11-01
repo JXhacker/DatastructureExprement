@@ -176,6 +176,33 @@ BST/BST.cpp.s:
 	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.s
 .PHONY : BST/BST.cpp.s
 
+Heap/Heap.obj: Heap/Heap.cpp.obj
+
+.PHONY : Heap/Heap.obj
+
+# target to build an object file
+Heap/Heap.cpp.obj:
+	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/Heap/Heap.cpp.obj
+.PHONY : Heap/Heap.cpp.obj
+
+Heap/Heap.i: Heap/Heap.cpp.i
+
+.PHONY : Heap/Heap.i
+
+# target to preprocess a source file
+Heap/Heap.cpp.i:
+	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/Heap/Heap.cpp.i
+.PHONY : Heap/Heap.cpp.i
+
+Heap/Heap.s: Heap/Heap.cpp.s
+
+.PHONY : Heap/Heap.s
+
+# target to generate assembly for a file
+Heap/Heap.cpp.s:
+	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/Heap/Heap.cpp.s
+.PHONY : Heap/Heap.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -218,6 +245,9 @@ help:
 	@echo ... BST/BST.obj
 	@echo ... BST/BST.i
 	@echo ... BST/BST.s
+	@echo ... Heap/Heap.obj
+	@echo ... Heap/Heap.i
+	@echo ... Heap/Heap.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
