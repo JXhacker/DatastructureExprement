@@ -31,22 +31,22 @@ void HeapInit(int data[],int dataLen) {
     }
 }
 
-int main(){
-    int bigData[]={25 ,11 ,22 ,10 ,13 ,39 ,16 ,75 ,55 ,21 ,63 ,76 ,57 ,94 ,14 ,20 ,30 ,45 ,19 ,69,99 ,15 ,81 ,98 ,17 ,78 ,23 ,84 ,12 ,72 ,90 ,38 ,40 ,79 ,54 ,24 ,56 ,60 ,74 ,47 };
-    int data[6];
-    for (int i = 1; i <= 5; ++i) {
-        data[i]=bigData[i-1];
-    }
-    HeapInit(data,5);
-    for (int j = 5; j < 40; ++j) {
-        if (bigData[j]>data[1])
-        data[1]=bigData[j];
-        HeapAdjust(data,1,5);
-    }
-
-    for (int k = 1; k <=5 ; ++k) {
-        printf("%d ",data[k]);
-    }
-
-}
+//int main(){
+//    int bigData[]={25 ,11 ,22 ,10 ,13 ,39 ,16 ,75 ,55 ,21 ,63 ,76 ,57 ,94 ,14 ,20 ,30 ,45 ,19 ,69,99 ,15 ,81 ,98 ,17 ,78 ,23 ,84 ,12 ,72 ,90 ,38 ,40 ,79 ,54 ,24 ,56 ,60 ,74 ,47 };
+//    int data[6];
+//    for (int i = 1; i <= 5; ++i) {
+//        data[i]=bigData[i-1];
+//    }
+//    HeapInit(data,5);
+//    for (int j = 5; j < 40; ++j) {
+//        if (bigData[j]>data[1])
+//        data[1]=bigData[j];
+//        HeapAdjust(data,1,5);
+//    }
+//
+//    for (int k = 1; k <=5 ; ++k) {
+//        printf("%d ",data[k]);
+//    }
+//
+//}
 
