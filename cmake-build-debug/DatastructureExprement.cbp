@@ -88,6 +88,9 @@
 		<Unit filename="D:/Clion/Projects/DatastructureExprement/BST/BST.cpp">
 			<Option target="DatastructureExprement"/>
 		</Unit>
+		<Unit filename="D:/Clion/Projects/DatastructureExprement/Dijkstra/Dijkstra.cpp">
+			<Option target="DatastructureExprement"/>
+		</Unit>
 		<Unit filename="D:/Clion/Projects/DatastructureExprement/Heap/Heap.cpp">
 			<Option target="DatastructureExprement"/>
 		</Unit>

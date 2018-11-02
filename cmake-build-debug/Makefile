@@ -176,6 +176,33 @@ BST/BST.cpp.s:
 	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.s
 .PHONY : BST/BST.cpp.s
 
+Dijkstra/Dijkstra.obj: Dijkstra/Dijkstra.cpp.obj
+
+.PHONY : Dijkstra/Dijkstra.obj
+
+# target to build an object file
+Dijkstra/Dijkstra.cpp.obj:
+	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/Dijkstra/Dijkstra.cpp.obj
+.PHONY : Dijkstra/Dijkstra.cpp.obj
+
+Dijkstra/Dijkstra.i: Dijkstra/Dijkstra.cpp.i
+
+.PHONY : Dijkstra/Dijkstra.i
+
+# target to preprocess a source file
+Dijkstra/Dijkstra.cpp.i:
+	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/Dijkstra/Dijkstra.cpp.i
+.PHONY : Dijkstra/Dijkstra.cpp.i
+
+Dijkstra/Dijkstra.s: Dijkstra/Dijkstra.cpp.s
+
+.PHONY : Dijkstra/Dijkstra.s
+
+# target to generate assembly for a file
+Dijkstra/Dijkstra.cpp.s:
+	$(MAKE) -f CMakeFiles\DatastructureExprement.dir\build.make CMakeFiles/DatastructureExprement.dir/Dijkstra/Dijkstra.cpp.s
+.PHONY : Dijkstra/Dijkstra.cpp.s
+
 Heap/Heap.obj: Heap/Heap.cpp.obj
 
 .PHONY : Heap/Heap.obj
@@ -245,6 +272,9 @@ help:
 	@echo ... BST/BST.obj
 	@echo ... BST/BST.i
 	@echo ... BST/BST.s
+	@echo ... Dijkstra/Dijkstra.obj
+	@echo ... Dijkstra/Dijkstra.i
+	@echo ... Dijkstra/Dijkstra.s
 	@echo ... Heap/Heap.obj
 	@echo ... Heap/Heap.i
 	@echo ... Heap/Heap.s

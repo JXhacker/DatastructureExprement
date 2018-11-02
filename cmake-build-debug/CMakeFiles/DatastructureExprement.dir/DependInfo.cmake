@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "D:/Clion/Projects/DatastructureExprement/AVL/AVL.cpp" "D:/Clion/Projects/DatastructureExprement/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/AVL/AVL.cpp.obj"
   "D:/Clion/Projects/DatastructureExprement/BST/BST.cpp" "D:/Clion/Projects/DatastructureExprement/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.obj"
+  "D:/Clion/Projects/DatastructureExprement/Dijkstra/Dijkstra.cpp" "D:/Clion/Projects/DatastructureExprement/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/Dijkstra/Dijkstra.cpp.obj"
   "D:/Clion/Projects/DatastructureExprement/Heap/Heap.cpp" "D:/Clion/Projects/DatastructureExprement/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/Heap/Heap.cpp.obj"
   "D:/Clion/Projects/DatastructureExprement/main.cpp" "D:/Clion/Projects/DatastructureExprement/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/main.cpp.obj"
   )
