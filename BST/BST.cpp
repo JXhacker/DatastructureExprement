@@ -64,14 +64,14 @@ BSTree SearchBST(BSTree bst, keyType key) {
     }
 }
 
-int main1(int argc, char *argv[]) {
-    BSTree bsTree = nullptr;
-    keyType keys[11] = {63, 90, 70, 55, 67, 42, 98, 83, 10, 45, 58};
-    for (int key : keys) {
-        InsertTree(&bsTree, key);
-    }
-    BSTree bst_find=SearchBST(bsTree,42);
-    if (bst_find!= nullptr){
-        cout<<bst_find->rchild->key<<endl;
-    }
-}
+//int main(int argc, char *argv[]) {
+//    BSTree bsTree = nullptr;
+//    keyType keys[11] = {63, 90, 70, 55, 67, 42, 98, 83, 10, 45, 58};
+//    for (int key : keys) {
+//        InsertTree(&bsTree, key);
+//    }
+//    BSTree bst_find=SearchBST(bsTree,42);
+//    if (bst_find!= nullptr){
+//        cout<<bst_find->rchild->key<<endl;
+//    }
+//}

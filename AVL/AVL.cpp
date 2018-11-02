@@ -174,11 +174,11 @@ void AVL_InOrder(AVLTree avlTree) {
     }
 }
 
-int main() {
-    AVLTree avlTree = nullptr;
-    int data[5] = {1, 2, 3, 4, 5};
-    for (int i = 0; i < 5; i++) {
-        insert_AVLTree(&avlTree, data[i]);
-    }
-    AVL_InOrder(avlTree);
-}
+//int main() {
+//    AVLTree avlTree = nullptr;
+//    int data[5] = {1, 2, 3, 4, 5};
+//    for (int i = 0; i < 5; i++) {
+//        insert_AVLTree(&avlTree, data[i]);
+//    }
+//    AVL_InOrder(avlTree);
+//}
