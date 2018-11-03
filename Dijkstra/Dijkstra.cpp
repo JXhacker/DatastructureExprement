@@ -25,10 +25,12 @@ void Dijkstra(Graph g, int *dist, int *path, int source) {
         }
         visit[i] = false;
     }
+    path[source]=source;
+    dist[source]=0;
     visit[source] = true;
     for (int i = 1; i < g.n; ++i) {
         int min = INT_MAX;
-        int bestNode = -1;
+        int bestNode;
         for (int j = 0; j < g.n; ++j) {
             if (!visit[j] && dist[j] < min) {
                 min = dist[j];
@@ -37,7 +39,7 @@ void Dijkstra(Graph g, int *dist, int *path, int source) {
         }
         visit[bestNode] = true;
         for (int k = 0; k < g.n; ++k) {
-            if (!visit[k] && (min + g.matrix[bestNode][k]) > 0 && (min + g.matrix[bestNode][k]) < dist[k]) {
+            if (!visit[k] && g.matrix[bestNode][k] > 0 && (min + g.matrix[bestNode][k]) < dist[k]) {
                 dist[k] = min + g.matrix[bestNode][k];
                 path[k] = bestNode;
             }
@@ -60,7 +62,7 @@ int main(){
             graph.matrix[j][i]=a[j][i];
         }
     }
-//    Dijkstra(graph, dist, path,1);
+    Dijkstra(graph, dist, path,1);
 //    for (int k = 0; k < graph.n; ++k) {
 //        printf("%d ",path[k]);
 //    }

@@ -12,18 +12,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dde68764-aaf7-4838-b6d0-9a06f30378a5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Dijkstra/Dijkstra.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/objects1.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/DatastructureExprement.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/DatastructureExprement.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dijkstra/Dijkstra.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Dijkstra/Dijkstra.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/DatastructureExprement.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/DatastructureExprement.exe" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +34,8 @@
       <file leaf-file-name="Heap.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Heap/Heap.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="627">
+              <caret line="33" selection-start-line="33" selection-start-column="2" selection-end-line="50" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -48,8 +43,8 @@
       <file leaf-file-name="Dijkstra.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Dijkstra/Dijkstra.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="29" column="15" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="15" />
+            <state relative-caret-position="214">
+              <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
               <folding>
                 <element signature="e#40#59#0" expanded="true" />
               </folding>
@@ -60,7 +55,7 @@
       <file leaf-file-name="AVL.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AVL/AVL.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
+            <state relative-caret-position="3458">
               <caret line="182" column="8" selection-start-line="182" selection-start-column="8" selection-end-line="182" selection-end-column="8" />
             </state>
           </provider>
@@ -69,7 +64,7 @@
       <file leaf-file-name="BST.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BST/BST.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
+            <state relative-caret-position="1254">
               <caret line="66" selection-start-line="66" selection-start-column="2" selection-end-line="76" selection-end-column="3" />
             </state>
           </provider>
@@ -84,6 +79,7 @@
       <find>nullptr</find>
       <find>printf</find>
       <find>FILE</find>
+      <find>path</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -112,10 +108,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-371" />
-    <option name="y" value="-1080" />
-    <option name="width" value="1175" />
-    <option name="height" value="1057" />
+    <option name="x" value="952" />
+    <option name="width" value="977" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -123,6 +118,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -144,7 +140,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -180,7 +175,8 @@
       <workItem from="1540709190870" duration="21571000" />
       <workItem from="1540804734305" duration="4188000" />
       <workItem from="1541075623135" duration="4102000" />
-      <workItem from="1541125016700" duration="12607000" />
+      <workItem from="1541125016700" duration="17874000" />
+      <workItem from="1541211852049" duration="1660000" />
     </task>
     <task id="LOCAL-00001" summary="init repo">
       <created>1540709556633</created>
@@ -273,23 +269,37 @@
       <option name="project" value="LOCAL" />
       <updated>1541141886510</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="实现Dijkstra ing">
+      <created>1541169368741</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1541169368741</updated>
+    </task>
+    <task id="LOCAL-00015" summary="实现Dijkstra ing">
+      <created>1541177150416</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1541177150416</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42468000" />
+    <option name="totallyTimeSpent" value="49395000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-371" y="-1080" width="1175" height="1057" extended-state="0" />
+    <frame x="762" y="0" width="781" height="840" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17150396" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.26174498" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.48964968" weight="0.32570806" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.48964968" weight="0.32290184" />
       <window_info anchor="bottom" id="CMake" order="7" sideWeight="0.49920383" weight="0.32897604" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.22292994" side_tool="true" weight="0.44553378" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49840763" weight="0.32897604" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.77707005" visible="true" weight="0.2570806" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.77707005" visible="true" weight="0.33428165" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.794586" weight="0.32897604" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -342,7 +352,8 @@
     <MESSAGE value="平衡二叉树编写中,有bug" />
     <MESSAGE value="完成平衡二叉树，堆ing" />
     <MESSAGE value="堆的基本算法完成，下面实现Dijkstra" />
-    <option name="LAST_COMMIT_MESSAGE" value="堆的基本算法完成，下面实现Dijkstra" />
+    <MESSAGE value="实现Dijkstra ing" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现Dijkstra ing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -350,6 +361,37 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Heap/Heap.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="33" selection-start-line="33" selection-start-column="2" selection-end-line="50" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AVL/AVL.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3458">
+          <caret line="182" column="8" selection-start-line="182" selection-start-column="8" selection-end-line="182" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BST/BST.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1254">
+          <caret line="66" selection-start-line="66" selection-start-column="2" selection-end-line="76" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dijkstra/Dijkstra.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="34" column="24" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="24" />
+          <folding>
+            <element signature="e#40#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Heap/Heap.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -416,29 +458,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AVL/AVL.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
+        <state relative-caret-position="3458">
           <caret line="182" column="8" selection-start-line="182" selection-start-column="8" selection-end-line="182" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BST/BST.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
+        <state relative-caret-position="1254">
           <caret line="66" selection-start-line="66" selection-start-column="2" selection-end-line="76" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Heap/Heap.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="627">
+          <caret line="33" selection-start-line="33" selection-start-column="2" selection-end-line="50" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Dijkstra/Dijkstra.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="29" column="15" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="15" />
+        <state relative-caret-position="214">
+          <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
           <folding>
             <element signature="e#40#59#0" expanded="true" />
           </folding>

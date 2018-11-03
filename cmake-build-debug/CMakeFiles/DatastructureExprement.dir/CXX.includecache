@@ -14,6 +14,12 @@ D:/Clion/Projects/DatastructureExprement/BST/BST.cpp
 iostream
 -
 
+D:/Clion/Projects/DatastructureExprement/Dijkstra/Dijkstra.cpp
+limits.h
+-
+iostream
+D:/Clion/Projects/DatastructureExprement/Dijkstra/iostream
+
 D:/Clion/Projects/DatastructureExprement/Heap/Heap.cpp
 iostream
 D:/Clion/Projects/DatastructureExprement/Heap/iostream

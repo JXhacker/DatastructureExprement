@@ -5,6 +5,8 @@ CMakeFiles/DatastructureExprement.dir/AVL/AVL.cpp.obj: ../AVL/AVL.cpp
 
 CMakeFiles/DatastructureExprement.dir/BST/BST.cpp.obj: ../BST/BST.cpp
 
+CMakeFiles/DatastructureExprement.dir/Dijkstra/Dijkstra.cpp.obj: ../Dijkstra/Dijkstra.cpp
+
 CMakeFiles/DatastructureExprement.dir/Heap/Heap.cpp.obj: ../Heap/Heap.cpp
 
 CMakeFiles/DatastructureExprement.dir/main.cpp.obj: ../main.cpp
