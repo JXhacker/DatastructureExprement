@@ -24,7 +24,7 @@ void HeapAdjust(int data[], int loc, int dataLen) {
     }
 }
 
-//data[]未初始化的数据 loc调整节点，datalen堆大小
+//data[]未初始化的数据 datalen堆大小
 void HeapInit(int data[],int dataLen) {
     for (int i = dataLen; i >= 1; --i) {
         HeapAdjust(data,i,dataLen);

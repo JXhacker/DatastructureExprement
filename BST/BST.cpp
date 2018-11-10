@@ -48,30 +48,94 @@ void PreOrder(BSTree bst) {
     }
 }
 
-BSTree SearchBST(BSTree bst, keyType key) {
-    if (bst != nullptr) {
-        if (bst->key > key) {
-            return SearchBST(bst->lchild, key);
+BSTNode *DelBSTNode(BSTree t, keyType k) {
+    BSTNode *p;
+    BSTNode *f;
+    BSTNode *s;
+    BSTNode *q;
+    p = t;
+    f = nullptr;
+    while (p) {
+        if (p->key == k) break;
+        f = p;
+        if (p->key > k) {
+            p = p->lchild;
+        } else {
+            p = p->rchild;
         }
-        if (bst->key < key) {
-            return SearchBST(bst->rchild, key);
+    }
+    if (p == nullptr) {
+        return t;//找不到返回原来的二叉排序树
+    }
+    if (p->lchild == nullptr) {
+        if (f == nullptr) {
+            t = p->rchild;
+        } else {
+            if (f->lchild == p)  /*p是f的左孩子*/
+            {
+                f->lchild = p->rchild;  /*将p的右子树链到f的左链上*/
+            } else  /*p是f的右孩子*/
+            {
+                f->rchild = p->rchild;  /*将p的右子树链到f的右链上*/
+            }
         }
-        if (bst->key == key) {
-            return bst;
-        }
+        free(p);
     } else {
-        return nullptr;
+        q = p;
+        s = p->lchild;
+        while (s->rchild)  /*在p的左子树中查找最右下结点*/
+        {
+            q = s;
+            s = s->rchild;
+        }
+        if (q == p) {
+            q->lchild = s->lchild;  /*将s的左子树链到q上*/
+        } else {
+            q->rchild = s->lchild;
+        }
+        p->key = s->key;  /*将s的值赋给p*/
+        free(s);
+    }
+    return t;
+}
+
+//构建排序二叉树，数据从文件中读取
+void CreateBST(BSTree *bst, char *filename) {
+    FILE *file = fopen(filename, "r+");
+    keyType key;
+    *bst = nullptr;
+    if (file == nullptr) {
+        return;
+    }
+    while (EOF != fscanf(file, "%d", &key)) {
+        printf("%d", key);
+        InsertTree(bst, key);
     }
 }
 
-//int main(int argc, char *argv[]) {
-//    BSTree bsTree = nullptr;
-//    keyType keys[11] = {63, 90, 70, 55, 67, 42, 98, 83, 10, 45, 58};
-//    for (int key : keys) {
-//        InsertTree(&bsTree, key);
-//    }
-//    BSTree bst_find=SearchBST(bsTree,42);
-//    if (bst_find!= nullptr){
-//        cout<<bst_find->rchild->key<<endl;
-//    }
-//}
+BSTree SearchBST(BSTree bst, keyType key) {
+    BSTree q;
+    q = bst;
+    while (q) {
+        q->flag = 1;
+        if (q->key == key) {
+            q->flag = 2;
+            return q;
+        }
+        if (q->key > key)
+            q = q->lchild;
+        else
+            q = q->rchild;
+    }
+    return nullptr;
+}
+
+int main() {
+    BSTree bsTree;
+    char data[] = "data.txt";
+    CreateBST(&bsTree, data);
+    BSTree bst_find = SearchBST(bsTree, 19);
+    if (bst_find != nullptr) {
+        cout << bst_find->rchild->key << endl;
+    }
+}
