@@ -104,11 +104,11 @@ void CreateBST(BSTree *bst, char *filename) {
     FILE *file = fopen(filename, "r+");
     keyType key;
     *bst = nullptr;
-    if (file == nullptr) {
+    if (file == NULL) {
         return;
     }
-    while (EOF != fscanf(file, "%d", &key)) {
-        printf("%d", key);
+    while (fscanf(file, "%d", &key) != EOF) {
+        printf("%d ", key);
         InsertTree(bst, key);
     }
 }
@@ -132,10 +132,14 @@ BSTree SearchBST(BSTree bst, keyType key) {
 
 int main() {
     BSTree bsTree;
-    char data[] = "data.txt";
+    char data[] = "..\\BST\\data.txt";
     CreateBST(&bsTree, data);
     BSTree bst_find = SearchBST(bsTree, 19);
     if (bst_find != nullptr) {
-        cout << bst_find->rchild->key << endl;
+        cout << bst_find->key << endl;
     }
+
+
+
+
 }
