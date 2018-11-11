@@ -130,6 +130,15 @@ BSTree SearchBST(BSTree bst, keyType key) {
     return nullptr;
 }
 
+
+void DotPoint(BSTree bst){
+
+}
+
+void DotEdge(BSTree bst){
+
+}
+
 int main() {
     BSTree bsTree;
     char data[] = "..\\BST\\data.txt";
@@ -138,8 +147,4 @@ int main() {
     if (bst_find != nullptr) {
         cout << bst_find->key << endl;
     }
-
-
-
-
 }
