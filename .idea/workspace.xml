@@ -11,9 +11,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dde68764-aaf7-4838-b6d0-9a06f30378a5" name="Default" comment="排序二叉树ing">
+    <list default="true" id="dde68764-aaf7-4838-b6d0-9a06f30378a5" name="Default" comment="排序二叉树dot">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BST/BST.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/BST/BST.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/DatastructureExprement.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/DatastructureExprement.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/DatastructureExprement.exe" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,11 +29,32 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BST.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BST.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BST/BST.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
+            <state relative-caret-position="402">
+              <caret line="173" column="14" selection-start-line="173" selection-start-column="14" selection-end-line="173" selection-end-column="14" />
+              <folding>
+                <element signature="e#41#60#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="graph.dot" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BST/graph.dot">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-741">
+              <caret selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AVL.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AVL/AVL.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="174" column="1" lean-forward="true" selection-start-line="174" selection-start-column="1" selection-end-line="174" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -47,8 +71,8 @@
       <file leaf-file-name="Dijkstra.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dijkstra/Dijkstra.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1368">
-              <caret line="72" column="3" selection-start-line="49" selection-start-column="2" selection-end-line="72" selection-end-column="3" />
+            <state relative-caret-position="722">
+              <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
               <folding>
                 <element signature="e#40#59#0" expanded="true" />
               </folding>
@@ -66,6 +90,7 @@
       <find>printf</find>
       <find>FILE</find>
       <find>path</find>
+      <find>flag</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -77,10 +102,10 @@
         <option value="$PROJECT_DIR$/s.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/AVL/AVL.cpp" />
         <option value="$PROJECT_DIR$/Heap/Heap.cpp" />
         <option value="$PROJECT_DIR$/BST/data.txt" />
         <option value="$PROJECT_DIR$/Dijkstra/Dijkstra.cpp" />
+        <option value="$PROJECT_DIR$/AVL/AVL.cpp" />
         <option value="$PROJECT_DIR$/BST/BST.cpp" />
       </list>
     </option>
@@ -95,7 +120,7 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-228" />
+    <option name="x" value="1052" />
     <option name="y" value="-1080" />
     <option name="width" value="1294" />
     <option name="height" value="1057" />
@@ -106,6 +131,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -126,11 +152,6 @@
             <path>
               <item name="DatastructureExprement" type="b2602c69:ProjectViewProjectNode" />
               <item name="DatastructureExprement" type="462c0819:PsiDirectoryNode" />
-              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DatastructureExprement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DatastructureExprement" type="462c0819:PsiDirectoryNode" />
               <item name="Dijkstra" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -142,7 +163,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -186,7 +206,10 @@
       <workItem from="1541578948104" duration="3815000" />
       <workItem from="1541768864447" duration="105000" />
       <workItem from="1541852921530" duration="4844000" />
-      <workItem from="1541940757092" duration="1440000" />
+      <workItem from="1541940757092" duration="2186000" />
+      <workItem from="1542520912502" duration="5000" />
+      <workItem from="1542623032925" duration="1276000" />
+      <workItem from="1542637328212" duration="12088000" />
     </task>
     <task id="LOCAL-00001" summary="init repo">
       <created>1540709556633</created>
@@ -321,22 +344,29 @@
       <option name="project" value="LOCAL" />
       <updated>1541865447809</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="排序二叉树dot">
+      <created>1541946529401</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1541946529401</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60979000" />
+    <option name="totallyTimeSpent" value="75094000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-229" y="-1088" width="2576" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13790385" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09692671" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.48964968" weight="0.44660193" />
       <window_info anchor="bottom" id="CMake" order="7" sideWeight="0.49920383" weight="0.32897604" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.22292994" side_tool="true" weight="0.44553378" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49840763" weight="0.32897604" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.77707005" weight="0.3305204" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.77707005" visible="true" weight="0.32686085" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.794586" weight="0.32897604" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -348,7 +378,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.48964968" weight="0.44725737" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,7 +422,8 @@
     <MESSAGE value="实现Dijkstra ing" />
     <MESSAGE value="实现Dijkstra主要算法" />
     <MESSAGE value="排序二叉树ing" />
-    <option name="LAST_COMMIT_MESSAGE" value="排序二叉树ing" />
+    <MESSAGE value="排序二叉树dot" />
+    <option name="LAST_COMMIT_MESSAGE" value="排序二叉树dot" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -401,6 +431,81 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/BST/BST.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2850">
+          <caret line="150" column="29" selection-start-line="150" selection-start-column="29" selection-end-line="150" selection-end-column="29" />
+          <folding>
+            <element signature="e#41#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BST/data.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dijkstra/Dijkstra.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="72" column="3" selection-start-line="49" selection-start-column="2" selection-end-line="72" selection-end-column="3" />
+          <folding>
+            <element signature="e#40#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BST/BST.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2850">
+          <caret line="150" column="29" lean-forward="true" selection-start-line="150" selection-start-column="29" selection-end-line="150" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BST/data.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dijkstra/Dijkstra.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="72" column="3" selection-start-line="49" selection-start-column="2" selection-end-line="72" selection-end-column="3" />
+          <folding>
+            <element signature="e#40#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BST/BST.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2850">
+          <caret line="150" column="29" lean-forward="true" selection-start-line="150" selection-start-column="29" selection-end-line="150" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BST/data.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dijkstra/Dijkstra.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="72" column="3" selection-start-line="49" selection-start-column="2" selection-end-line="72" selection-end-column="3" />
+          <folding>
+            <element signature="e#40#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BST/BST.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2622">
@@ -668,17 +773,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AVL/AVL.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="162" column="1" selection-start-line="162" selection-start-column="1" selection-end-line="162" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dijkstra/Dijkstra.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1368">
-          <caret line="72" column="3" selection-start-line="49" selection-start-column="2" selection-end-line="72" selection-end-column="3" />
+        <state relative-caret-position="722">
+          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
           <folding>
             <element signature="e#40#59#0" expanded="true" />
           </folding>
@@ -692,10 +790,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/AVL/AVL.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="174" column="1" lean-forward="true" selection-start-line="174" selection-start-column="1" selection-end-line="174" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BST/BST.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
+        <state relative-caret-position="402">
+          <caret line="173" column="14" selection-start-line="173" selection-start-column="14" selection-end-line="173" selection-end-column="14" />
+          <folding>
+            <element signature="e#41#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BST/graph.dot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-741">
+          <caret selection-end-line="1" />
         </state>
       </provider>
     </entry>
