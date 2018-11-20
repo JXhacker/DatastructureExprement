@@ -125,8 +125,7 @@ BSTree SearchBST(BSTree bst, keyType key) {
         if (q->key > key) {
             q->flag = 2;
             q = q->lchild;
-        }
-        else {
+        } else {
             q->flag = 2;
             q = q->rchild;
         }
@@ -139,38 +138,46 @@ void CreateDotFile(BSTree bst, char *filename) {
     FILE *file = fopen(filename, "w");
     queue<BSTree> bst_queue;
     fprintf(file, "digraph G{\n");
+    fprintf(file, "node [fontname = Verdana,shape=record, height=.1];\n");
+    fprintf(file, "edge [fontname = Verdana,style=solid];\n");
     if (bst == nullptr) {
         return;
     }
     bst_queue.push(bst);
-    fprintf(file, "%d[shape=circle,color=blue];\n", bst->key);
+    fprintf(file, "%d[label=\"<l>%c|<d>%d|<r>%c\",color=yellow];\n", bst->key, ' ', bst->key, ' ');
     while (!bst_queue.empty()) {
         BSTNode *bstNode_current = bst_queue.front();
         bst_queue.pop();
         if (bstNode_current->lchild != nullptr) {
             bst_queue.push(bstNode_current->lchild);
             if (bstNode_current->lchild->flag == 3) {
-                fprintf(file, "%d[label=\"<l>%c|<d>%d|<r>%c\",shape=circle,color=red];\n", bstNode_current->lchild->key,' ',bstNode_current->lchild->key,' ');
-            } else if(bstNode_current->lchild->flag == 2){
-                fprintf(file, "%d[label=\"<l>%c|<d>%d|<r>%c\",shape=circle,color=blue];\n", bstNode_current->lchild->key,' ',bstNode_current->lchild->key,' ');
-            } else{
-                fprintf(file, "%d[label=\"<l>%c|<d>%d|<r>%c\",shape=circle];\n", bstNode_current->lchild->key,' ',bstNode_current->lchild->key,' ');
+                fprintf(file, "%d[label=\"<l>%c|<d>%d|<r>%c\",color=red];\n", bstNode_current->lchild->key, ' ',
+                        bstNode_current->lchild->key, ' ');
+            } else if (bstNode_current->lchild->flag == 2) {
+                fprintf(file, "%d[label=\"<l>%c|<d>%d|<r>%c\",color=yellow];\n", bstNode_current->lchild->key, ' ',
+                        bstNode_current->lchild->key, ' ');
+            } else {
+                fprintf(file, "%d[label=\"<l>%c|<d>%d|<r>%c\"];\n", bstNode_current->lchild->key, ' ',
+                        bstNode_current->lchild->key, ' ');
             }
             fprintf(file, "%d:l:sw->%d:d;\n", bstNode_current->key, bstNode_current->lchild->key);
-        } else{
+        } else {
             //fprintf(file, "%d->Null[shape=box];\n", bstNode_current->key);
         }
         if (bstNode_current->rchild != nullptr) {
             bst_queue.push(bstNode_current->rchild);
-            if (bstNode_current->rchild->flag==3) {
-                fprintf(file, "%d[label=\"<l>%c|<d>%d|<r>%c\",shape=circle,color=red];\n", bstNode_current->rchild->key,' ',bstNode_current->rchild->key,' ');
-            } else if(bstNode_current->rchild->flag == 2){
-                fprintf(file, "%d[label=\"<l>%c|<d>%d|<r>%c\",shape=circle,color=blue];\n", bstNode_current->rchild->key,' ',bstNode_current->rchild->key,' ');
-            } else{
-                fprintf(file, "%d[label=\"<l>%c|<d>%d|<r>%c\",shape=circle];\n", bstNode_current->rchild->key,' ',bstNode_current->rchild->key,' ');
+            if (bstNode_current->rchild->flag == 3) {
+                fprintf(file, "%d[label=\"<l>%c|<d>%d|<r>%c\",color=red];\n", bstNode_current->rchild->key, ' ',
+                        bstNode_current->rchild->key, ' ');
+            } else if (bstNode_current->rchild->flag == 2) {
+                fprintf(file, "%d[label=\"<l>%c|<d>%d|<r>%c\",color=yellow];\n", bstNode_current->rchild->key, ' ',
+                        bstNode_current->rchild->key, ' ');
+            } else {
+                fprintf(file, "%d[label=\"<l>%c|<d>%d|<r>%c\"];\n", bstNode_current->rchild->key, ' ',
+                        bstNode_current->rchild->key, ' ');
             }
-            fprintf(file, "%d:l:se->%d:d;\n", bstNode_current->key, bstNode_current->rchild->key);
-        } else{
+            fprintf(file, "%d:r:se->%d:d;\n", bstNode_current->key, bstNode_current->rchild->key);
+        } else {
             //fprintf(file, "%d->Null[shape=circle];\n", bstNode_current->key);
         }
     }
@@ -179,15 +186,14 @@ void CreateDotFile(BSTree bst, char *filename) {
 }
 
 
-int main() {
-    BSTree bsTree;
-    char data[] = "..\\BST\\data.txt";
-    char dotFile[] = "..\\BST\\graph.dot";
-    CreateBST(&bsTree, data);
-    BSTree bst_find = SearchBST(bsTree, 725);
-    if (bst_find != nullptr) {
-        cout << bst_find->key << endl;
-    }
-    CreateDotFile(bsTree,dotFile);
-    //system("dot -Tjpg graph.dot -o graph.jpg");
-}
+//int main() {
+//    BSTree bsTree;
+//    char data[] = "..\\BST\\data.txt";
+//    char dotFile[] = "..\\BST\\graph.dot";
+//    CreateBST(&bsTree, data);
+//    BSTree bst_find = SearchBST(bsTree, 725);
+//    if (bst_find != nullptr) {
+//        cout << bst_find->key << endl;
+//    }
+//    CreateDotFile(bsTree, dotFile);
+//}
