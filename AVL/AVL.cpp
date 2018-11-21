@@ -55,8 +55,6 @@ bool insert_AVLTree(AVLTree *avlt, keyType key) {
             }
 
         }
-
-
         if (key > fp->key) {
             fp->rchild = newNode;
         }
@@ -84,9 +82,9 @@ bool insert_AVLTree(AVLTree *avlt, keyType key) {
             }
         }
 
-        if (A->bf == -2 && B->bf == -1) {
-            A->rchild = B->lchild;
-            B->lchild = A;
+        if (A->bf == -2 && B->bf == -1) {//RR型的情况的调整
+            A->rchild = B->lchild;//将B的左子树挂到A的右子树上
+            B->lchild = A;//将A挂到B的左子树上
             A->bf = 0;
             B->bf = 0;
             if (fa == nullptr) {
@@ -96,9 +94,9 @@ bool insert_AVLTree(AVLTree *avlt, keyType key) {
             } else {
                 fa->rchild = B;
             }
-        } else if (A->bf == 2 && B->bf == 1) {
-            A->lchild = B->rchild;
-            B->rchild = A;
+        } else if (A->bf == 2 && B->bf == 1) {//LL型的情况的调整
+            A->lchild = B->rchild;//将B的右子树挂到A的左子树上
+            B->rchild = A;//将A挂到B的右子树上
             A->bf = 0;
             B->bf = 0;
             if (fa == nullptr) {
@@ -108,13 +106,13 @@ bool insert_AVLTree(AVLTree *avlt, keyType key) {
             } else {
                 fa->rchild = B;
             }
-        } else if (A->bf == 2 && B->bf == -1) {
-            C = B->rchild;
-            B->rchild = C->lchild;
-            A->lchild = C->rchild;
-            C->lchild = B;
-            C->rchild = A;
-            if (key < C->key) {
+        } else if (A->bf == 2 && B->bf == -1) {//LR型的情况的调整
+            C = B->rchild;//C是B的右孩子
+            B->rchild = C->lchild;//将C的左子树挂到B的右子树上
+            A->lchild = C->rchild;//将C的右子树挂到A的左子树上
+            C->lchild = B;//将B挂到C的左子树上
+            C->rchild = A;//将A挂到C的右子树上
+            if (key < C->key) {//平衡因子调整
                 A->bf = -1;
                 B->bf = 0;
                 C->bf = 0;
@@ -133,13 +131,13 @@ bool insert_AVLTree(AVLTree *avlt, keyType key) {
             } else {
                 fa->rchild = C;
             }
-        } else if (A->bf == -2 && B->bf == 1) {
-            C = B->lchild;
-            B->lchild = C->rchild;
-            A->rchild = C->lchild;
-            C->lchild = A;
-            C->rchild = B;
-            if (key < C->key) {
+        } else if (A->bf == -2 && B->bf == 1) {//RL型的情况的调整
+            C = B->lchild;//C是B的左孩子
+            B->lchild = C->rchild;//将C的右子树挂带B的左子树
+            A->rchild = C->lchild;//将C的左子树挂到A的右子树
+            C->lchild = A;//将A挂到C的左子树
+            C->rchild = B;//将B挂到C的右子树
+            if (key < C->key) {//平衡因子调整
                 A->bf = 0;
                 B->bf = -1;
                 C->bf = 0;
@@ -175,6 +173,126 @@ void AVL_InOrder(AVLTree avlTree) {
     }
 }
 
+int getRchildMin(AVLTree *TreeRoot) {
+    if ((*TreeRoot)->lchild == NULL) {
+        return (*TreeRoot)->key;
+    } else {
+        return getRchildMin(&((*TreeRoot)->lchild));
+    }
+}
+
+// 求树的深度
+int GetHeight(AVLTree TreeRoot) {
+    if (TreeRoot == NULL) return 0;
+    return 1 + max(GetHeight(TreeRoot->lchild), GetHeight(TreeRoot->rchild));
+}
+
+// 计算节点的平衡因子
+int updateBF(AVLTree *TreeRoot) {
+    return GetHeight((*TreeRoot)->lchild) - GetHeight((*TreeRoot)->rchild);
+}
+// 左旋转
+void LL_Rotation(AVLTree *TreeRoot) {
+    AVLTree temp = (*TreeRoot)->lchild;
+    (*TreeRoot)->lchild = temp->rchild;
+    temp->rchild = *TreeRoot;
+    *TreeRoot = temp;
+    (*TreeRoot)->bf = max(GetHeight((*TreeRoot)->lchild), GetHeight((*TreeRoot)->rchild));
+    temp->bf = max(GetHeight(temp->lchild), GetHeight(temp->rchild));
+}
+// 右旋转
+void RR_Rotation(AVLTree *TreeRoot) {
+    AVLTree temp = (*TreeRoot)->rchild;
+    (*TreeRoot)->rchild = temp->lchild;
+    temp->lchild = *TreeRoot;
+    *TreeRoot = temp;
+    (*TreeRoot)->bf = max(GetHeight((*TreeRoot)->lchild), GetHeight((*TreeRoot)->rchild));
+    temp->bf = max(GetHeight(temp->lchild), GetHeight(temp->rchild));
+}
+
+// 先右旋，后左旋
+void RL_Rotation(AVLTree *TreeRoot) {
+    LL_Rotation(&((*TreeRoot)->rchild));
+    RR_Rotation(&(*TreeRoot));
+}
+
+
+// 先左旋，后右旋
+void LR_Rotation(AVLTree *TreeRoot) {
+    RR_Rotation(&((*TreeRoot)->lchild));
+    LL_Rotation(&(*TreeRoot));
+}
+
+
+void AVLTreeFix(AVLTree *TreeRoot, int data, int type) {
+    if (type == 1) { // 插入后进行调整
+        if (updateBF(&(*TreeRoot)) >= 2) {
+            if (data < (*TreeRoot)->lchild->key) { // LL
+                LL_Rotation(&(*TreeRoot));
+            } else {                                // LR
+                LR_Rotation(&(*TreeRoot));
+            }
+        }
+        if (updateBF(&(*TreeRoot)) <= -2) {
+            if (data > (*TreeRoot)->rchild->key) { // RR
+                RR_Rotation(&(*TreeRoot));
+            } else {                                // RL
+                RL_Rotation(&(*TreeRoot));
+            }
+        }
+    }
+
+    if (type == 0) { // 删除后进行调整
+        if (updateBF(&(*TreeRoot)) >= 2) {
+            // 删除与插入要判断的符号逆向
+            if (updateBF(&((*TreeRoot)->lchild)) <= -1) { // LR
+                LR_Rotation(&(*TreeRoot));
+            } else {                                // LL
+                LL_Rotation(&(*TreeRoot));
+            }
+        }
+        if (updateBF(&(*TreeRoot)) <= -2) {
+            if (updateBF(&((*TreeRoot)->rchild)) >= 1) { // RL
+                RL_Rotation(&(*TreeRoot));
+            } else {                                // RR
+                RR_Rotation(&(*TreeRoot));
+            }
+        }
+    }
+}
+
+
+AVLTree DeleteAVL(AVLTree *TreeRoot, int data) {
+    if (TreeRoot == NULL) {
+        return NULL;
+    }
+    if (data < (*TreeRoot)->key) {
+        (*TreeRoot)->lchild = DeleteAVL(&((*TreeRoot)->lchild), data);
+    } else if (data > (*TreeRoot)->key) {
+        (*TreeRoot)->rchild = DeleteAVL(&((*TreeRoot)->rchild), data);
+    } else {
+        if ((*TreeRoot)->lchild != NULL && (*TreeRoot)->rchild != NULL) {
+            // 删除的节点有两个孩子
+            (*TreeRoot)->key = getRchildMin(&((*TreeRoot)->rchild));
+            (*TreeRoot)->rchild = DeleteAVL(&((*TreeRoot)->rchild), (*TreeRoot)->key);
+        } else {
+            // 删除的节点只有一个孩子或者没有孩子
+            AVLTree temp = *(TreeRoot);
+            (*TreeRoot) = ((*TreeRoot)->lchild != NULL) ? (*TreeRoot)->lchild : (*TreeRoot)->rchild;
+            free(temp);
+        }
+    }
+
+    // 恢复二叉树的平衡
+    if (*TreeRoot == NULL) {
+        return *TreeRoot;
+    }
+    (*TreeRoot)->bf = updateBF(&(*TreeRoot));
+    AVLTreeFix(&(*TreeRoot), data, 0);
+
+    return *TreeRoot;
+}
+//层次遍历二叉树打印节点和边，目标节点颜色是红色，寻找过程路线上的节点是黄色，其余节点标黑色
 void CreateAVLDotFile(AVLTree avl, char *filename) {
     FILE *file = fopen(filename, "w");
     queue<AVLTree> avl_queue;
@@ -216,7 +334,7 @@ void CreateAVL(AVLTree *avlt, char *filename) {
         return;
     }
     while (fscanf(file, "%d", &key) != EOF) {
-        insert_AVLTree(avlt, key);
+        insert_AVLTree(avlt, key);//AVL插入算法
     }
 }
 
@@ -227,13 +345,4 @@ int main() {
     CreateAVL(&avlTree,data);
     AVL_InOrder(avlTree);
     CreateAVLDotFile(avlTree,dotFile);
-//        BSTree bsTree;
-//    char data[] = "..\\BST\\data.txt";
-//    char dotFile[] = "..\\BST\\graph.dot";
-//    CreateBST(&bsTree, data);
-//    BSTree bst_find = SearchBST(bsTree, 725);
-//    if (bst_find != nullptr) {
-//        cout << bst_find->key << endl;
-//    }
-//
 }

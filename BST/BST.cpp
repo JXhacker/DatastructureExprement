@@ -8,44 +8,53 @@ using namespace std;
 
 
 typedef int keyType;
-
+/*
+ * key±íÊ¾½ÚµãµÄÊı¾İÓò
+ * lchildºÍrchild±íÊ¾½Úµã×óÓÒº¢×Ó
+ * flagÔÚÊı¾İ²éÕÒÊ±×ö±ê¼Ç×÷ÓÃ
+ * */
 typedef struct node {
     keyType key;
     struct node *lchild;
     struct node *rchild;
     int flag;
 } BSTNode, *BSTree;
-
-bool InsertTree(BSTree *bst, keyType key) {
+/*
+ * ¸Ãº¯ÊıÓÃÓÚ½«½Úµã²åÈëµ½Ö¸¶¨µÄÅÅĞò¶ş²æÊ÷ÖĞ
+ * bstÎªÖ¸Ïò¶ş²æÅÅĞòÊ÷Í·Ö¸ÕëµÄÒ»¸öÖ¸Õë
+ * key ÎªÓû²åÈë½ÚµãµÄÊı¾İÓòµÄÖµ
+ * ·µ»ØÖµtrueÎª²åÈë³É¹¦ falseÎª²åÈëÊ§°Ü
+ * */
+bool InsertTree(BSTree *bst, int key) {
     if ((*bst) == nullptr) {
-        *bst = (BSTree) malloc(sizeof(BSTNode));
+        *bst = (BSTree) malloc(sizeof(BSTNode));//·ÖÅä¿Õ¼ä
         (*bst)->key = key;
         (*bst)->lchild = nullptr;
         (*bst)->rchild = nullptr;
         (*bst)->flag = 0;
     } else {
-        if (key < (*bst)->key) {
+        if (key < (*bst)->key) {//Èô²åÈë½ÚµãĞ¡ÓÚ¸Ã½Úµã£¬²åÈëµ½½ÚµãµÄ×ó×ÓÊ÷ÖĞ
             InsertTree(&(*bst)->lchild, key);
         }
-        if (key > (*bst)->key) {
+        if (key > (*bst)->key) {//Èô²åÈë½Úµã´óÓÚ¸Ã½Úµã£¬²åÈëµ½½ÚµãµÄÓÒ×ÓÊ÷ÖĞ
             InsertTree(&(*bst)->rchild, key);
         }
-        if (key == (*bst)->key) {
-            return false;//æ’å…¥äºŒå‰æ’åºæ ‘å·²ç»æœ‰çš„æ•°æ®
+        if (key == (*bst)->key) {//²åÈë¶ş²æÅÅĞòÊ÷ÒÑ¾­ÓĞµÄÊı¾İ
+            return false;
         }
     }
     return true;
 }
-
+//·ÃÎÊ¶ş²æÊ÷ÖĞµÄ½Úµã
 void visit(BSTNode bsn) {
     printf("%d ", bsn.key);
 }
-
-void PreOrder(BSTree bst) {
-    if (bst != nullptr) {
+//ÖĞĞò±éÀú¶ş²æÊ÷
+void InOrder(BSTree bst) {
+    if (bst != nullptr) {//ÖÕÖ¹Ìõ¼ş
+        InOrder(bst->lchild);
         visit(*bst);
-        PreOrder(bst->lchild);
-        PreOrder(bst->rchild);
+        InOrder(bst->rchild);
     }
 }
 
@@ -66,63 +75,71 @@ BSTNode *DelBSTNode(BSTree t, keyType k) {
         }
     }
     if (p == nullptr) {
-        return t;//æ‰¾ä¸åˆ°è¿”å›åŸæ¥çš„äºŒå‰æ’åºæ ‘
+        return t;//ÕÒ²»µ½·µ»ØÔ­À´µÄ¶ş²æÅÅĞòÊ÷
     }
     if (p->lchild == nullptr) {
         if (f == nullptr) {
             t = p->rchild;
         } else {
-            if (f->lchild == p)  /*pæ˜¯fçš„å·¦å­©å­*/
+            if (f->lchild == p)  /*pÊÇfµÄ×óº¢×Ó*/
             {
-                f->lchild = p->rchild;  /*å°†pçš„å³å­æ ‘é“¾åˆ°fçš„å·¦é“¾ä¸Š*/
-            } else  /*pæ˜¯fçš„å³å­©å­*/
+                f->lchild = p->rchild;  /*½«pµÄÓÒ×ÓÊ÷Á´µ½fµÄ×óÁ´ÉÏ*/
+            } else  /*pÊÇfµÄÓÒº¢×Ó*/
             {
-                f->rchild = p->rchild;  /*å°†pçš„å³å­æ ‘é“¾åˆ°fçš„å³é“¾ä¸Š*/
+                f->rchild = p->rchild;  /*½«pµÄÓÒ×ÓÊ÷Á´µ½fµÄÓÒÁ´ÉÏ*/
             }
         }
         free(p);
     } else {
         q = p;
         s = p->lchild;
-        while (s->rchild)  /*åœ¨pçš„å·¦å­æ ‘ä¸­æŸ¥æ‰¾æœ€å³ä¸‹ç»“ç‚¹*/
+        while (s->rchild)  /*ÔÚpµÄ×ó×ÓÊ÷ÖĞ²éÕÒ×îÓÒÏÂ½áµã*/
         {
             q = s;
             s = s->rchild;
         }
         if (q == p) {
-            q->lchild = s->lchild;  /*å°†sçš„å·¦å­æ ‘é“¾åˆ°qä¸Š*/
+            q->lchild = s->lchild;  /*½«sµÄ×ó×ÓÊ÷Á´µ½qÉÏ*/
         } else {
             q->rchild = s->lchild;
         }
-        p->key = s->key;  /*å°†sçš„å€¼èµ‹ç»™p*/
+        p->key = s->key;  /*½«sµÄÖµ¸³¸øp*/
         free(s);
     }
     return t;
 }
-
-//æ„å»ºæ’åºäºŒå‰æ ‘ï¼Œæ•°æ®ä»æ–‡ä»¶ä¸­è¯»å–
+/*
+ * ¸Ãº¯ÊıÓÃÓÚ¹¹½¨ÅÅĞò¶ş²æÊ÷£¬Êı¾İ´ÓÎÄ¼şÖĞ¶ÁÈ¡
+ * bstÎªÖ¸Ïò¶ş²æÅÅĞòÊ÷Í·Ö¸ÕëµÄÒ»¸öÖ¸Õë
+ * filenameÊÇÊı¾İËùÔÚÎÄ¼şÃû
+ * */
 void CreateBST(BSTree *bst, char *filename) {
     FILE *file = fopen(filename, "r+");
     keyType key;
-    *bst = nullptr;
-    if (file == nullptr) {
+    *bst = nullptr;//¶ş²æÅÅĞòÊ÷³õÊ¼»¯
+    if (file == nullptr) {//ÅĞ¶ÏÊÇ·ñ»ñµÃÎÄ¼ş¾ä±ú
         return;
     }
-    while (fscanf(file, "%d", &key) != EOF) {
-        InsertTree(bst, key);
+    while (fscanf(file, "%d", &key) != EOF) {//Öğ¸ö¶ÁÈëÊı¾İ
+        InsertTree(bst, key);//Öğ¸ö²åÈë¶ş²æÅÅĞòÊ÷
     }
 }
-
+/*
+ * ¸ù¾İ¹Ø¼ü×ÖkeyÔÙÅÅĞò¶ş²æÊ÷ÖĞËÑË÷Ä¿±ê½Úµã
+ * bstÎªÖ¸Ïò¶ş²æÅÅĞòÊ÷Í·Ö¸ÕëµÄÒ»¸öÖ¸Õë
+ * key ÎªÓûËÑË÷½ÚµãµÄÊı¾İÓòµÄÖµ
+ * ·µ»ØÖµ£ºÕÒµ½Ôò·µ»ØÖ¸Ïò¸Ã½ÚµãµÄÖ¸Õë£¬·ñÔò·µ»Ø¿Õ
+ * */
 BSTree SearchBST(BSTree bst, keyType key) {
     BSTree q;
     q = bst;
     while (q) {
         q->flag = 1;
-        if (q->key == key) {
+        if (q->key == key) {//ÈôÕÒµ½½Úµã£¬½«¸Ã½Úµãflag±êÖ¾Îª3
             q->flag = 3;
             return q;
         }
-        if (q->key > key) {
+        if (q->key > key) {//ÈôÎ´ÕÒµ½£¬½«ËÑË÷¹ı³ÌÖĞÓöµ½µÄ½Úµã±ê2
             q->flag = 2;
             q = q->lchild;
         } else {
@@ -133,21 +150,18 @@ BSTree SearchBST(BSTree bst, keyType key) {
     return nullptr;
 }
 
-//å±‚æ¬¡éå†äºŒå‰æ ‘
+//²ã´Î±éÀú¶ş²æÊ÷´òÓ¡½ÚµãºÍ±ß£¬Ä¿±ê½ÚµãÑÕÉ«ÊÇºìÉ«£¬Ñ°ÕÒ¹ı³ÌÂ·ÏßÉÏµÄ½ÚµãÊÇ»ÆÉ«£¬ÆäÓà½Úµã±êºÚÉ«
 void CreateDotFile(BSTree bst, char *filename) {
     FILE *file = fopen(filename, "w");
     queue<BSTree> bst_queue;
     fprintf(file, "digraph G{\n");
     fprintf(file, "node [fontname = Verdana,shape=record, height=.1];\n");
     fprintf(file, "edge [fontname = Verdana,style=solid];\n");
-    if (bst == nullptr) {
-        return;
-    }
+    if (bst == nullptr) { return; }
     bst_queue.push(bst);
     fprintf(file, "%d[label=\"<l>%c|<d>%d|<r>%c\",color=yellow];\n", bst->key, ' ', bst->key, ' ');
     while (!bst_queue.empty()) {
-        BSTNode *bstNode_current = bst_queue.front();
-        bst_queue.pop();
+        BSTNode *bstNode_current = bst_queue.front();bst_queue.pop();
         if (bstNode_current->lchild != nullptr) {
             bst_queue.push(bstNode_current->lchild);
             if (bstNode_current->lchild->flag == 3) {
@@ -161,8 +175,6 @@ void CreateDotFile(BSTree bst, char *filename) {
                         bstNode_current->lchild->key, ' ');
             }
             fprintf(file, "%d:l:sw->%d:d;\n", bstNode_current->key, bstNode_current->lchild->key);
-        } else {
-            //fprintf(file, "%d->Null[shape=box];\n", bstNode_current->key);
         }
         if (bstNode_current->rchild != nullptr) {
             bst_queue.push(bstNode_current->rchild);
@@ -177,12 +189,9 @@ void CreateDotFile(BSTree bst, char *filename) {
                         bstNode_current->rchild->key, ' ');
             }
             fprintf(file, "%d:r:se->%d:d;\n", bstNode_current->key, bstNode_current->rchild->key);
-        } else {
-            //fprintf(file, "%d->Null[shape=circle];\n", bstNode_current->key);
         }
     }
-    fprintf(file, "}\n");
-    fclose(file);
+    fprintf(file, "}\n");fclose(file);
 }
 
 
@@ -191,9 +200,8 @@ void CreateDotFile(BSTree bst, char *filename) {
 //    char data[] = "..\\BST\\data.txt";
 //    char dotFile[] = "..\\BST\\graph.dot";
 //    CreateBST(&bsTree, data);
-//    BSTree bst_find = SearchBST(bsTree, 725);
-//    if (bst_find != nullptr) {
-//        cout << bst_find->key << endl;
-//    }
+//    BSTree bst_find = SearchBST(bsTree, 558);
+//    printf("¶ş²æÅÅĞòÊ÷ÖĞĞò±éÀú½á¹û:\n");
+//    InOrder(bsTree);
 //    CreateDotFile(bsTree, dotFile);
 //}
