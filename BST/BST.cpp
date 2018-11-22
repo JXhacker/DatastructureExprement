@@ -194,14 +194,14 @@ void CreateDotFile(BSTree bst, char *filename) {
     fprintf(file, "}\n");fclose(file);
 }
 
-//
-//int main() {
-//    BSTree bsTree;
-//    char data[] = "..\\BST\\data.txt";
-//    char dotFile[] = "..\\BST\\graph.dot";
-//    CreateBST(&bsTree, data);
-//    BSTree bst_find = SearchBST(bsTree, 558);
-//    printf("二叉排序树中序遍历结果:\n");
-//    InOrder(bsTree);
-//    CreateDotFile(bsTree, dotFile);
-//}
+
+int main() {
+    BSTree bsTree;
+    char data[] = "..\\BST\\data.txt";
+    char dotFile[] = "..\\BST\\graph.dot";
+    CreateBST(&bsTree, data);
+    BSTree bst_find = SearchBST(bsTree, 558);
+    printf("二叉排序树中序遍历结果:\n");
+    InOrder(bsTree);
+    CreateDotFile(bsTree, dotFile);
+}
