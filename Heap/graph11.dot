@@ -1,0 +1,27 @@
+digraph G {
+edge [fontname = "Microsoft YaHei", style=solid, arrowsize=0.7];
+565[shape=circle];
+565[label="<l> |<m>565|<r> ",shape=record,color=red];
+565->577;
+565->654;
+577[shape=circle];
+577->658;
+577->779;
+654[shape=circle];
+654->800;
+654->856;
+658[shape=circle];
+658->752;
+658->924;
+779[shape=circle,color=red];
+779->967;
+800[shape=circle];
+856[shape=circle];
+752[shape=circle];
+924[shape=circle];
+967[shape=circle];
+779.[shape=circle,color=red,shape=Mcircle];
+779.:e->565:l:w;
+479.[shape=circle,color=red,shape=Mcircle];
+565:r:e->479.:w;
+}
