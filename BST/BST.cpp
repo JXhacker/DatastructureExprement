@@ -194,7 +194,7 @@ void CreateDotFile(BSTree bst, char *filename) {
     fprintf(file, "}\n");fclose(file);
 }
 
-
+//
 //int main() {
 //    BSTree bsTree;
 //    char data[] = "..\\BST\\data.txt";

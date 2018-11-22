@@ -4,9 +4,11 @@
 
 #include "iostream"
 
-//å †ç”¨æ•°ç»„è¿›è¡Œå­˜å‚¨
-// è¯¥å‡½æ•°æ ¹æ®è¾“å…¥çš„èŠ‚ç‚¹çš„å¯¹åº”åºå·è‡ªä¸Šè€Œä¸‹å¯¹å †è¿›è¡Œç»´æŠ¤
-//data[]å †ä¸­æ•°æ® locéœ€è¦è°ƒæ•´çš„èŠ‚ç‚¹çš„ä½ç½®ï¼Œä»Ž1å¼€å§‹ datalenæ•°æ®é•¿åº¦
+int K = 10;
+
+//¶ÑÓÃÊý×é½øÐÐ´æ´¢
+// ¸Ãº¯Êý¸ù¾ÝÊäÈëµÄ½ÚµãµÄ¶ÔÓ¦ÐòºÅ×ÔÉÏ¶øÏÂ¶Ô¶Ñ½øÐÐÎ¬»¤
+//data[]¶ÑÖÐÊý¾Ý locÐèÒªµ÷ÕûµÄ½ÚµãµÄÎ»ÖÃ£¬´Ó1¿ªÊ¼ datalenÊý¾Ý³¤¶È
 void HeapAdjust(int data[], int loc, int dataLen) {
     int nextLoc = 2 * loc;
     int temp;
@@ -24,32 +26,96 @@ void HeapAdjust(int data[], int loc, int dataLen) {
     }
 }
 
-//data[]æœªåˆå§‹åŒ–çš„æ•°æ® datalenå †å¤§å°
-void HeapInit(int data[],int dataLen) {
+//data[]Î´³õÊ¼»¯µÄÊý¾Ý datalen¶Ñ´óÐ¡
+void HeapInit(int data[], int dataLen) {
     for (int i = dataLen; i >= 1; --i) {
-        HeapAdjust(data,i,dataLen);
+        HeapAdjust(data, i, dataLen);
     }
 }
 
+void CreateDotFile(char *path, int a[], int insertData, int oldData) {
+    FILE *file = fopen(path, "w");
+    fprintf(file, "digraph G {\n");
 
+    fprintf(file, "edge [fontname = \"Microsoft YaHei\", style=solid, arrowsize=0.7];\n");
+    for (int i = 1; i <= K; ++i) {
+        if (a[i] == insertData) {
+            fprintf(file, "%d[shape=circle,color=red];\n", insertData);
+        } else {
+            fprintf(file, "%d[shape=circle];\n", a[i]);
+        }
+        if (i == 1) {
+            fprintf(file, "%d[label=\"<l>%c|<m>%d|<r>%c\",shape=record,color=red];\n", a[1], ' ', a[1], ' ');
+        }
+        int left_index = 2 * i;
+        if (left_index <= K) {
+            fprintf(file, "%d->%d;\n", a[i], a[left_index]);
+        }
+        int right_index = 2 * i + 1;
+        if (right_index <= K) {
+            fprintf(file, "%d->%d;\n", a[i], a[right_index]);
+        }
+    }
 
+    fprintf(file, "%d%c[shape=circle,color=red,shape=Mcircle];\n", insertData, '.');
+    fprintf(file, "%d%c:e->%d:l:w;\n", insertData, '.', a[1]);
+    fprintf(file, "%d%c[shape=circle,color=red,shape=Mcircle];\n", oldData, '.');
+    fprintf(file, "%d:r:e->%d%c:w;\n", a[1], oldData, '.');
+    fprintf(file, "}");
+    fclose(file);
+}
 
-//int main(){
-//    int bigData[]={25 ,11 ,22 ,10 ,13 ,39 ,16 ,75 ,55 ,21 ,63 ,76 ,57 ,94 ,14 ,20 ,30 ,45 ,19 ,69,99 ,15 ,81 ,98 ,17 ,78 ,23 ,84 ,12 ,72 ,90 ,38 ,40 ,79 ,54 ,24 ,56 ,60 ,74 ,47 };
-//    int data[6];
-//    for (int i = 1; i <= 5; ++i) {
-//        data[i]=bigData[i-1];
-//    }
-//    HeapInit(data,5);
-//    for (int j = 5; j < 40; ++j) {
-//        if (bigData[j]>data[1])
-//        data[1]=bigData[j];
-//        HeapAdjust(data,1,5);
-//    }
+void initHeap(int *heap, char *filename) {
+    FILE *file = fopen(filename, "r+");
+    if (file == nullptr) {
+        return;
+    }
+    int data = fscanf(file, "%d", &data);
+    for (int i = 1, data = 120; i <= K; fscanf(file, "%d", &data)) {// != EOF
+        heap[i] = data;
+        i++;
+    }
+    HeapInit(heap, K);
+}
+//´ÓÎÄ¼þÖÐ¶ÁÈ¡Êý¾Ýheap±íÊ¾´æ´¢Ð¡¶¥¶ÑµÄÊý×é£¬filename±íÊ¾Êý¾ÝÎÄ¼þÎ»ÖÃ
+void TopK(int *heap, char *filename) {
+    int bigData;
+    int oldData;
+    FILE *file = fopen(filename, "r+");
+    int count = 0;
+    for (int j = 0; j < 10; ++j) {
+        fscanf(file, "%d", &bigData);
+    }
+    for (; fscanf(file, "%d", &bigData) != EOF;) {//Öð¸ö±È½ÏÖ±ÖÁÎÄ¼þÊý¾Ý¶ÁÈ¡Íê
+        oldData = heap[1];
+        if (bigData > heap[1]) {
+            heap[1] = bigData;
+            HeapAdjust(heap, 1, K);
+        }
+        if (count > 10 && count < 20) {
+            char dotFile[100];// = "..\\Heap\\graph.dot";
+            sprintf(dotFile, "..\\Heap\\graph%d.dot", count);
+            CreateDotFile(dotFile, heap, bigData, oldData);//dotÎÄ¼þ´´½¨º¯Êý
+        }//È¡³öµÚ10-20´ÎµÄ±È½Ï½á¹ûÍ¼
+        printf("µÚ%d´Îµü´úheap£º",count+1);
+        for (int i = 1; i <= K; ++i) {
+            printf("%d ", heap[i]);
+        }
+        printf("\n");
+        count++;
+    }
+}
+
+//int main() {
 //
-//    for (int k = 1; k <=5 ; ++k) {
-//        printf("%d ",data[k]);
+//    char datafile[] = "..\\Heap\\data.txt";
+//    char dotFile[] = "..\\Heap\\graph.dot";
+//    int heap[10000] = {0};
+//    initHeap(heap, datafile);
+//    for (int i = 1; i <= K; ++i) {
+//        printf("%d ", heap[i]);
 //    }
-//
+//    printf("\n");
+//    TopK(heap, datafile);
 //}
 

@@ -338,11 +338,11 @@ void CreateAVL(AVLTree *avlt, char *filename) {
     }
 }
 
-int main() {
-    AVLTree avlTree = nullptr;
-    char data[] = "..\\AVL\\data.txt";
-    char dotFile[] = "..\\AVL\\graph.dot";
-    CreateAVL(&avlTree,data);
-    AVL_InOrder(avlTree);
-    CreateAVLDotFile(avlTree,dotFile);
-}
+//int main() {
+//    AVLTree avlTree = nullptr;
+//    char data[] = "..\\AVL\\data.txt";
+//    char dotFile[] = "..\\AVL\\graph.dot";
+//    CreateAVL(&avlTree,data);
+//    AVL_InOrder(avlTree);
+//    CreateAVLDotFile(avlTree,dotFile);
+//}
